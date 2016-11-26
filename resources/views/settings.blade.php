@@ -2,9 +2,9 @@
 @extends('layouts.sideMenu')
 
 @section('content')
-<div class="container"
+<div class="col-xs-9"
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="">
             <div class="panel panel-default">
                 <div class="panel-heading">Настройки</div>
 

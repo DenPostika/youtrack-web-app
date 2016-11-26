@@ -23,10 +23,12 @@
     </script>
 </head>
 <body>
+  <div class="container-fluid">
     <div id="app">
 
         @yield('side_menu')
         @yield('content')
+    </div>
     </div>
 
     <!-- Scripts -->
