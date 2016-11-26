@@ -8,10 +8,14 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Трекер</div>
                 <div class="panel-body">
-                  <span id="time">0ч 20м</span>
-                  <a id="action">Начать</a>
-                  <a id="stop" hidden="true">Стоп</a>
-                  <textarea id="what_action" placeholder="Что сейчас делаешь?"></textarea>
+                  <div class="col-xs-6" >
+                    <span id="time">0ч 20м</span>
+                    <a id="action" class="btn btn-info">Начать</a>
+                    <a id="stop"  hidden="true">Стоп</a>
+                  </div>
+                  <div class="col-xs-6" style="clear: both">
+                    <textarea id="what_action" placeholder="Что сейчас делаешь?"></textarea>
+                  </div>
                   <table class="table table-hover">
                     <thead>
                       <th>#</th>
