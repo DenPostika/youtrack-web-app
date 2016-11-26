@@ -31,7 +31,7 @@ class SettingsController extends Controller
     {
       	$user = Auth::user();
 
-        return view('settings' , array( 'user' => $user ) );
+        return view('settings' , array( 'user' => $user, 'activeMenu' => 'settings' ) );
     }
 
 

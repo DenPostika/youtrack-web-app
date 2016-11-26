@@ -37,6 +37,6 @@ class TrackerController extends Controller
             $user->youtrack_password
           );
 
-        return view('tracker' , array( 'user' => $user ) );
+        return view('tracker' , array( 'user' => $user, 'activeMenu' => 'timer' ) );
     }
 }

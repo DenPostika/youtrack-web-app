@@ -43,6 +43,6 @@ class IsueController extends Controller
 
         //var_dump($isue);die();
 
-        return view('isue' , array( 'user' => $user, 'isueInfo' => $isue ) );
+        return view('isue' , array( 'user' => $user, 'isueInfo' => $isue, 'activeMenu' => 'projects' ) );
     }
 }

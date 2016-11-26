@@ -42,7 +42,7 @@ class ProjectController extends Controller
         $isues = $youtrack->getIssuesByFilter($project_name);
         //var_dump($isues);die();
 
-        return view('isueses' , array( 'user' => $user, 'isues' => $isues ) );
+        return view('isueses' , array( 'user' => $user, 'isues' => $isues, 'activeMenu' => 'projects' ) );
     }
 
 }

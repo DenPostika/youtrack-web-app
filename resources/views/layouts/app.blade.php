@@ -28,7 +28,6 @@
 <body>
   <div class="container-fluid">
     <div id="app" class="row">
-
         @yield('side_menu')
         @yield('content')
     </div>

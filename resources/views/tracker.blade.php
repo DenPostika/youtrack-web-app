@@ -8,8 +8,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Трекер</div>
                 <div class="panel-body">
-                  <div class="col-xs-6" >
-                    <span id="time">0ч 20м</span>
+                  <div class="col-xs-6 timer">
+                    <span id="time">0ч 0м</span>
                     <div class="btn-for-time">
                       <a id="action" class="btn btn-info">Начать</a>
                       <a id="stop"  hidden="true">Стоп</a>

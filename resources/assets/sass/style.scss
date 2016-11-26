@@ -25,7 +25,7 @@
     font-size: 3em;
     margin: 10px 30px;
     &.start{
-      color: $brand-info;
+      color: #17AEF3;
     }
 }
 .name{
@@ -66,8 +66,16 @@ a:focus, a:active{
   font-size: 1.7em;
 }
 #what_action{
-  width: 100%;
+  width: 46%;
   margin: 15px;
+  height: 85px;
+  margin-bottom: 70px;
+  margin-left: 50px;
+}
+.timer{
+  margin-top: 30px;
+  margin-bottom: -10px;
+  margin-left: 30px;
 }
 .material-icons{
   margin-right: 7px;
@@ -81,6 +89,7 @@ a:focus, a:active{
     &.active{
       a{
       border-left: 3px solid #EB6555;
+      background: #4e5e69;
       }
     }
     &:hover{

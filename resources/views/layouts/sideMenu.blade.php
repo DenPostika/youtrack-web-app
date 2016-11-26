@@ -18,10 +18,10 @@
           <div class="collapse navbar-collapse" id="app-navbar-collapse">
               <!-- Left Side Of Navbar -->
               <ul class="nav nav-pils nav-stacked navbar-raq">
-                <li class="active">
+                <li class="{{ (isset($activeMenu) && $activeMenu == 'dashboard') ? 'active' : '' }}">
                     <a class="" href="{{ url('/') }}">
                       <i class="material-icons">dashboard</i>
-                      dashboard
+                      Dashboard
                     </a>
                 </li>
               </ul>
@@ -29,14 +29,15 @@
               <!-- Right Side Of Navbar -->
               <ul class="nav nav-pils nav-stacked navbar-raq">
 
-                  <li>
+                  <li class="{{ (isset($activeMenu) && $activeMenu == 'timer') ? 'active' : '' }}">
                     <a href="{{ url('/tracker') }}">
                     <i class="material-icons">timer</i>
                     Трекер</a></li>
-                  <li><a href="{{ url('/projects') }}">
+                  <li class="{{ (isset($activeMenu) && $activeMenu == 'projects' ) ? 'active' : '' }}">
+                    <a href="{{ url('/projects') }}">
                     <i class="material-icons">featured_play_list</i>
                     Проекты</a></li>
-                  <li>
+                  <li class="{{ (isset($activeMenu) && $activeMenu == 'settings') ? 'active' : '' }}">
                     <a href="{{ url('/settings') }}">
                     <i class="material-icons">settings</i>
                     Настройки</a></li>

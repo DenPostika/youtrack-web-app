@@ -39,7 +39,7 @@ class ProjectsController extends Controller
 
         $projects = $youtrack->getAccessibleProjects();
 
-        return view('projects' , array( 'user' => $user, 'projects' => $projects ) );
+        return view('projects' , array( 'user' => $user, 'projects' => $projects, 'activeMenu' => 'projects') );
     }
 
 }
