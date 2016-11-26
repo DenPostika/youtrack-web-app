@@ -19,18 +19,74 @@
 .menu-raq{
   min-height: 100%;
   min-height: 100vh;
-  background: ##3E505C;
+  background-color: #3E505C;
+}
+.circle{
+  display: block;
+  margin: 15px auto;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+}
+.header-raq{
+  height: 150px;
+}
+.dropdown-menu{
+  background:  #3E505C;
+}
+.panel-body{
+  padding: 0;
+}
+a:focus, a:active{
+  background: transparent;
+}
+.nav .open{
+  a:focus{
+    background: transparent;
+  }
 }
 .navbar-raq{
+  width: 100%;
   li{
+    a{
+    border-left: 3px solid transparent;
+    }
+    &.active{
+      a{
+      border-left: 3px solid #EB6555;
+      }
+    }
     &:hover{
 
     }
     a{
+      width: 100%;
       color: #fff;
       &:hover{
         color: $brand-primary;
       }
     }
+  }
+}
+table{
+  tr{
+    &>th,&>td{
+      padding-left: 15px !important;
+  }
+
+  }
+}
+.form-group{
+  margin-top: 0;
+}
+.text-align-center{
+  text-align: center;
+  .btn{
+    display: inline-block;
   }
 }

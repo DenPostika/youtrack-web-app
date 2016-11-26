@@ -2,7 +2,7 @@
 @extends('layouts.sideMenu')
 
 @section('content')
-<div class="col-xs-9">
+<div class="col-xs-10">
     <div class="row">
         <div class="">
             <div class="panel panel-default">
@@ -42,7 +42,7 @@
                       <div class="form-group">
                         <label for="name" class="control-label">Youtrack password</label>
                         <div class="">
-                          <input type="text" class="form-control" name="youtrack_password" value="{{ $user->youtrack_password }}">
+                          <input type="password" class="form-control" name="youtrack_password" value="{{ $user->youtrack_password }}">
                         </div>
                       </div>
 

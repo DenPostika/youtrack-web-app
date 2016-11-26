@@ -2,7 +2,7 @@
 @extends('layouts.sideMenu')
 
 @section('content')
-<div class="col-xs-9">
+<div class="col-xs-10">
     <div class="row">
         <div class="">
             <div class="panel panel-default">

@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="public/css/app.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('/public/css/bootstrap-material-design.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="{{ asset('/public/css/ripples.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/public/css/style.css') }}">
 
