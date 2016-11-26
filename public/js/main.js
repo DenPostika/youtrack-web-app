@@ -12,6 +12,10 @@
       }
     });
 
+    $('#stop').on('click', function(){
+      timerStop();
+    });
+
     function timerStart(){
       timer = true;
 
@@ -19,8 +23,10 @@
         timerTick();
       }, 60000);
 
+      $('#time').addClass('start');
       $('#action').html('Пауза');
       $('#stop').show();
+      $('#stop').addClass('btn btn-info');
     }
 
     function timerStop(){
@@ -29,8 +35,11 @@
       clearInterval(timerId);
       saveTime();
 
+      $('#time').removeClass('start');
       $('#action').html('Начать');
+      
       $('#stop').hide();
+      $('#stop').addClass('btn btn-info');
     }
 
     function timerPause(){
@@ -38,6 +47,7 @@
 
       clearInterval(timerId);
 
+      $('#time').removeClass('start');
       $('#action').html('Начать');
       $('#pause').hide();
     }
