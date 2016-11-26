@@ -10,6 +10,7 @@
                 <div class="panel-body">
                   <span id="time">0ч 20м</span>
                   <a id="action">Начать</a>
+                  <a id="stop" hidden="true">Стоп</a>
                   <textarea id="what_action" placeholder="Что сейчас делаешь?"></textarea>
                   <table class="table table-hover">
                     <thead>

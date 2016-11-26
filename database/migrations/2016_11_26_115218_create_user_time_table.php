@@ -13,7 +13,13 @@ class CreateUserTimeTable extends Migration
      */
     public function up()
     {
-        //
+      Schema::create('tracker', function (Blueprint $table) {
+          $table->increments('id');
+          $table->integer('user_id')->references('id')->on('users');
+          $table->string('date');
+          $table->string('what_action');
+          $table->integer('time');
+      });
     }
 
     /**
@@ -23,6 +29,6 @@ class CreateUserTimeTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('tracker');
     }
 }
