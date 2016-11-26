@@ -24,11 +24,26 @@
   background-color: #3E505C;
 }
 
+#time {
+  font-size: 3em;
+  margin: 10px 30px;
+}
+
+#time.start {
+  color: #8eb4cb;
+}
+
+.name {
+  font-size: 1.5em;
+  color: #fff;
+  line-height: 71px;
+}
+
 .circle {
   display: block;
-  margin: 15px auto;
-  width: 60px;
-  height: 60px;
+  margin: 15px;
+  width: 40px;
+  height: 40px;
   background: #fff;
   border-radius: 50%;
 }
@@ -39,7 +54,7 @@
 }
 
 .header-raq {
-  height: 150px;
+  height: 75px;
 }
 
 .dropdown-menu {
@@ -56,6 +71,19 @@ a:focus, a:active {
 
 .nav .open a:focus {
   background: transparent;
+}
+
+.panel-heading {
+  font-size: 1.7em;
+}
+
+#what_action {
+  width: 100%;
+  margin: 15px;
+}
+
+.material-icons {
+  margin-right: 7px;
 }
 
 .navbar-raq {
@@ -79,8 +107,29 @@ a:focus, a:active {
   color: #3097D1;
 }
 
+table tbody {
+  border-bottom: 1px solid #ddd;
+}
+
 table tr > th, table tr > td {
-  padding-left: 15px !important;
+  padding-left: 25px !important;
+}
+
+table tr > td {
+  vertical-align: middle !important;
+  height: 58px;
+}
+
+.colunm2,
+.colunm3,
+.colunm4 {
+  width: 10%;
+}
+
+.panel-body {
+  max-height: 100vh;
+  min-height: calc(100vh - 60px);
+  overflow: auto;
 }
 
 .form-group {
