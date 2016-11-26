@@ -9,9 +9,21 @@
                 <div class="panel-heading">Задача</div>
 
                 <div class="panel-body">
-                  <h2>{{ $isueInfo->summary }}</h2>
-                  <p>{{ $isueInfo->description}}</p>
-                  <p>Estimate : {{ $isueInfo->Estimation / 60 }} ч.</p>
+                  <div class="title-task">
+                    <h2>{{ $isueInfo->summary }}</h2>
+                  </div>
+                  <div class="box-description col-xs-9">
+                    <p>{{ $isueInfo->description}}</p>
+
+                  </div>
+                  <div class=" box-task col-xs-3">
+                    <ul class="box-info">
+                      <li>Estimate : <span class="pull-right">{{ $isueInfo->Estimation / 60 }} ч.</span></li>
+                      <li>Estimate : {{ $isueInfo->Estimation / 60 }} ч.</li>
+                      <li>Estimate : {{ $isueInfo->Estimation / 60 }} ч.</li>
+                    </ul>
+                  </div>
+
                 </div>
             </div>
         </div>

@@ -110,6 +110,41 @@ table{
 
   }
 }
+.btn-for-time{
+  display: inline-block;
+  position: relative;
+  top: -9px;
+}
+.title-task{
+  margin-left: 15px;
+}
+.box-task{
+  border: 2px solid #ddd;
+  padding: 10px;
+}
+.box-description{
+  margin-right: -15px;
+  padding-left: 15px;
+}
+.box-info{
+  padding: 0;
+  li{
+    list-style: none;
+    border-bottom: 1px solid #ddd;
+  }
+}
+.high{
+  color: #e67676;
+}
+.meddium{
+  color: #dce464;
+}
+a, a:focus, a:hover {
+    color: $brand-info;
+}
+.low{
+  color: #64cde4;
+}
 .colunm2,
 .colunm3,
 .colunm4{

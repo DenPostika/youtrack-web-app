@@ -10,8 +10,10 @@
                 <div class="panel-body">
                   <div class="col-xs-6" >
                     <span id="time">0ч 20м</span>
-                    <a id="action" class="btn btn-info">Начать</a>
-                    <a id="stop"  hidden="true">Стоп</a>
+                    <div class="btn-for-time">
+                      <a id="action" class="btn btn-info">Начать</a>
+                      <a id="stop"  hidden="true">Стоп</a>
+                    </div>
                   </div>
                   <div class="col-xs-6" style="clear: both">
                     <textarea id="what_action" placeholder="Что сейчас делаешь?"></textarea>
@@ -26,9 +28,9 @@
                     <tbody>
                       <tr>
                         <td>1</td>
-                        <td>2016-11-12</td>
+                        <td>2016-11-12</th>
                         <td>Выложить модуль Таксономии WP</td>
-                        <td>2ч 30м</td>
+                        <td>2ч 30м</th>
                       </tr>
                       <tr>
                         <td>1</td>
