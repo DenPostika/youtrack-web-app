@@ -11,10 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('', 'HomeController@index');
+
+Route::get('/settings', 'SettingsController@index');
+Route::post('/settings/save', 'SettingsController@save');
+
+Route::get('/projects', 'ProjectsController@index');
+
+Route::get('/issues', 'ProjectController@index');
+
+Route::get('/issue', 'IsueController@index');
+
+Route::get('/tracker', 'TrackerController@index');

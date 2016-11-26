@@ -18,6 +18,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+
+            $table->string('youtrack_url')->default(null);
+            $table->string('youtrack_email')->default(null);
+            $table->string('youtrack_password')->default(null);
+
             $table->rememberToken();
             $table->timestamps();
         });
