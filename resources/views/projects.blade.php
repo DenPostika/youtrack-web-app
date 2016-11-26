@@ -11,13 +11,11 @@
                 <div class="panel-body">
                   <table class="table table-striped table-hover">
                     <thead>
-                      <th>#</th>
-                      <th>Название</th>
+                      <th>Название проекта</th>
                     </thead>
                     <tbody>
                      @foreach( $projects as $n => $project )
                       <tr>
-                        <td>{{ $n }}</td>
                         <td><a href="/issues?project_name={{ $project->shortName }}">{{ $project->name }}</a></td>
                       </tr>
                      @endforeach

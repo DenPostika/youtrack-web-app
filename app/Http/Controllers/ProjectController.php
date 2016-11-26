@@ -40,6 +40,7 @@ class ProjectController extends Controller
         $project_name = $request->input('project_name');
 
         $isues = $youtrack->getIssuesByFilter($project_name);
+        //var_dump($isues);die();
 
         return view('isueses' , array( 'user' => $user, 'isues' => $isues ) );
     }

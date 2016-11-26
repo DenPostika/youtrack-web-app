@@ -66,7 +66,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'youtrack_url' => 'https://atilog.myjetbrains.com/',
+            'youtrack_url' => 'https://atilog.myjetbrains.com/youtrack',
             'youtrack_email' => '',
             'youtrack_password' => ''
         ]);
