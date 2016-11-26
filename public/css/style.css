@@ -1,0 +1,34 @@
+[class^="col"] {
+  padding: 0;
+}
+
+.row {
+  padding: 0;
+  margin: 0;
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#app-navbar-collapse {
+  padding: 0;
+}
+
+.menu-raq {
+  min-height: 100%;
+  min-height: 100vh;
+}
+
+.navbar-raq li a {
+  color: #fff;
+}
+
+.navbar-raq li a:hover {
+  color: #3097D1;
+}
+
+/*# sourceMappingURL=style.css.map */

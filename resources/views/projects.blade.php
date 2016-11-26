@@ -2,14 +2,14 @@
 @extends('layouts.sideMenu')
 
 @section('content')
-<div class="container">
+<div class="col-xs-9">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="">
             <div class="panel panel-default">
                 <div class="panel-heading">Проекты</div>
 
                 <div class="panel-body">
-                  <table>
+                  <table class="table table-striped table-hover">
                     <thead>
                       <th>#</th>
                       <th>Название</th>
