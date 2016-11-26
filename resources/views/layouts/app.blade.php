@@ -14,6 +14,7 @@
     <link href="public/css/app.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('/public/css/bootstrap-material-design.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/public/css/ripples.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/public/css/style.css') }}">
 
     <!-- Scripts -->
     <script>
@@ -24,7 +25,7 @@
 </head>
 <body>
   <div class="container-fluid">
-    <div id="app">
+    <div id="app" class="row">
 
         @yield('side_menu')
         @yield('content')

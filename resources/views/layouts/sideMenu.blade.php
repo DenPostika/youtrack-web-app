@@ -1,6 +1,6 @@
 @section('side_menu')
 <div class="col-xs-3">
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default menu-raq">
       <div class="">
           <div class="header-raq clearfix">
 
@@ -26,7 +26,7 @@
 
               <!-- Right Side Of Navbar -->
               <ul class="nav nav-pils nav-stacked navbar-raq">
-                  <li><a href="{{ url('/tracker') }}">Трекер</a></li>
+                  <li class="active"><a href="{{ url('/tracker') }}">Трекер</a></li>
                   <li><a href="{{ url('/projects') }}">Проекты</a></li>
                   <li><a href="{{ url('/settings') }}">Настройки</a></li>
                   <!-- Authentication Links -->
