@@ -25,27 +25,9 @@
                       <th>Задание</th>
                       <th>Потраченое время</th>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>2016-11-12</th>
-                        <td>Выложить модуль Таксономии WP</td>
-                        <td>2ч 30м</th>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>2016-11-12</td>
-                        <td>Выложить модуль Таксономии WP</td>
-                        <td>2ч 30м</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>2016-11-12</td>
-                        <td>Выложить модуль Таксономии WP</td>
-                        <td>2ч 30м</td>
-                      </tr>
-                    </tbody>
+                    <tbody id="time-tbody"></tbody>
                   </table>
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 </div>
             </div>
         </div>

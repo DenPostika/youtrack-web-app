@@ -64,13 +64,26 @@ a:focus, a:active{
 }
 .panel-heading{
   font-size: 1.7em;
+  margin-bottom: 10px;
 }
 #what_action{
-  width: 46%;
+  width: 67%;
   margin: 15px;
   height: 85px;
   margin-bottom: 70px;
   margin-left: 50px;
+}
+.colunm0{
+  width: 2%;
+}
+.error-block{
+  margin: 10% auto;
+  width: 61%;
+  font-size: 24px;
+  text-align: center;
+}
+.error-icon{
+  font-size: 2.4em;
 }
 .timer{
   margin-top: 30px;
@@ -128,18 +141,24 @@ table{
   margin-left: 15px;
 }
 .box-task{
-  border: 2px solid #ddd;
+  //border: 2px solid #ddd;
   padding: 10px;
+  background: #F8F8F8;
+  margin-top: -30px;
 }
 .box-description{
   margin-right: -15px;
-  padding-left: 15px;
+  padding-left: 32px;
 }
 .box-info{
   padding: 0;
+  li:not(:last-child){
+    border-bottom: 1px solid #ddd;
+  }
   li{
     list-style: none;
-    border-bottom: 1px solid #ddd;
+    padding-top: 7px;
+    padding-bottom: 7px;
   }
 }
 .high{

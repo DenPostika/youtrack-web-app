@@ -31,12 +31,6 @@ class TrackerController extends Controller
     {
       	$user = Auth::user();
 
-        $youtrack =  new Connection(
-            $user->youtrack_url,
-            $user->youtrack_email,
-            $user->youtrack_password
-          );
-
         return view('tracker' , array( 'user' => $user, 'activeMenu' => 'timer' ) );
     }
 }

@@ -26,3 +26,6 @@ Route::get('/issues', 'ProjectController@index');
 Route::get('/issue', 'IsueController@index');
 
 Route::get('/tracker', 'TrackerController@index');
+
+Route::post('/time/save', 'TimeController@save');
+Route::post('time/getTimeForDate', 'TimeController@getTimeForDate');

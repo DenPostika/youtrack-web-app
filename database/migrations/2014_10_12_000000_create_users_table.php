@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('youtrack_url')->default(null);
             $table->string('youtrack_email')->default(null);
             $table->string('youtrack_password')->default(null);
+            $table->integer('all_time')->default(0);
 
             $table->rememberToken();
             $table->timestamps();

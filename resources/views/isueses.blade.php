@@ -6,9 +6,13 @@
     <div class="row">
         <div class="">
             <div class="panel panel-default">
-                <div class="panel-heading">Задачи по проекту <b>{{ ($isues[0]->projectShortName) ? $isues[0]->projectShortName : '' }}</b></div>
-
+                @if(isset($isues))
+                  <div class="panel-heading">Задачи по проекту <b>{{ ($isues[0]->projectShortName) ? $isues[0]->projectShortName : '' }}</b></div>
+                @else
+                  <div class="panel-heading">Что то пошло не так :с</div>
+                @endif
                 <div class="panel-body">
+                  @if(isset($isues))
                   <table class="table table-striped table-hover">
                     <thead>
                       <th class="colunm0">#</th>
@@ -29,6 +33,13 @@
                      @endforeach
                     </tbody>
                   </table>
+                  @elseif(isset($error))
+                  <div class="error-block">
+                    <i class="material-icons error-icon">cloud_off</i>
+                    <p>Произошла ошибка соединения с сервером Youtrack
+                    Проверьте <a href="/settings">настройки</a> соединения</p>
+                  </div>
+                 @endif
                 </div>
             </div>
         </div>

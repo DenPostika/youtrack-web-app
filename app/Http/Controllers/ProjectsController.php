@@ -31,15 +31,19 @@ class ProjectsController extends Controller
     {
       	$user = Auth::user();
 
-        $youtrack =  new Connection(
-            $user->youtrack_url,
-            $user->youtrack_email,
-            $user->youtrack_password
-          );
+        try {
+          $youtrack =  new Connection(
+              $user->youtrack_url,
+              $user->youtrack_email,
+              $user->youtrack_password
+            );
 
-        $projects = $youtrack->getAccessibleProjects();
+          $projects = $youtrack->getAccessibleProjects();
 
-        return view('projects' , array( 'user' => $user, 'projects' => $projects, 'activeMenu' => 'projects') );
+          return view('projects' , array( 'user' => $user, 'projects' => $projects, 'activeMenu' => 'projects') );
+        } catch (\Exception $e) {
+          return view('projects' , array( 'user' => $user, 'error' => '404') );
+        }
     }
 
 }
