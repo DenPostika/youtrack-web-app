@@ -48,8 +48,8 @@
 
                       <div class="text-align-center">
                         {{ csrf_field() }}
-                        <p class="button-back btn-raised"><a href="{{ URL::previous() }}" class="step-back">Отменить</a></p>
-                        <input type="submit" name="save_user_data" class="btn btn-raised btn-primary" value="Сохранить">
+                        <a href="{{ URL::previous() }}" class="btn btn-info step-back">Отменить</a>
+                        <input type="submit" name="save_user_data" class="btn btn-raised btn-info" value="Сохранить">
                       </div>
 
                   </form>

@@ -200,3 +200,45 @@ a, a:focus, a:hover {
     display: inline-block;
   }
 }
+.form-group.is-focused .form-control {
+    outline: 0;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#03a9f4),to(#03a9f4)),-webkit-gradient(linear,left top,left bottom,from(#D2D2D2),to(#D2D2D2));
+    background-image: -webkit-linear-gradient(#03a9f4,#03a9f4),-webkit-linear-gradient(#D2D2D2,#D2D2D2);
+    background-image: -o-linear-gradient(#03a9f4,#03a9f4),-o-linear-gradient(#D2D2D2,#D2D2D2);
+    background-image: linear-gradient(#03a9f4,#03a9f4),linear-gradient(#D2D2D2,#D2D2D2);
+    -webkit-background-size: 100% 2px,100% 1px;
+    background-size: 100% 2px,100% 1px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s
+}
+
+.form-group.is-focused .form-control .material-input:after {
+    background-color: #03a9f4 !important;
+}
+
+.form-group.is-focused label,.form-group.is-focused label.control-label {
+    color: #03a9f4 !important;
+}
+#login_page{
+    max-height: 300px;
+    margin-top: calc(50vh - 150px);
+    .form-group{
+      label{
+        padding-right: 15px;
+        padding-top: 8px;
+      }
+    }
+}
+#register_page{
+    max-height: 350px;
+    margin-top: calc(50vh - 175px);
+    .form-group{
+      label{
+        padding-right: 15px;
+        padding-top: 8px;
+      }
+    }
+}
