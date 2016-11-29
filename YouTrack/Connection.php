@@ -1825,6 +1825,17 @@ class Connection
         return $items;
     }
 
+    public function addWorkitem($issueId, $date = null, $duration, $description = 'From system', $worktype = 'development')
+    {
+        $body = '<workItem>
+                  <duration>' . $duration . '</duration>
+                  <description>' . $description . '</description>
+                 </workItem>';
+
+        $xml = $this->requestXml('POST', '/issue/' . urlencode($issueId) . '/timetracking/workitem/', $body );
+        return $xml;
+    }
+
     /**
      * Get issue history by issue id
      *

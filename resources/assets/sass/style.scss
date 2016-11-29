@@ -145,10 +145,18 @@ table{
   padding: 10px;
   background: #F8F8F8;
   margin-top: -30px;
+  margin-left: 25px;
 }
 .box-description{
   margin-right: -15px;
   padding-left: 32px;
+}
+.noUi-base{
+  background: #1EB0F2;
+}
+.noUi-handle{
+  background: #1EB0F2 !important;
+  border-color: #1EB0F2 !important;
 }
 .box-info{
   padding: 0;

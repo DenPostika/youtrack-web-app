@@ -1,5 +1,46 @@
   jQuery(document).ready(function ($) {
 
+   if (document.getElementById('slider') !== null){
+      noUiSlider.create(document.getElementById('slider'), {
+      	start: [ 0 ],
+        connect: [false, true],
+        step: 1,
+      	range: {
+      		'min': [ 0 ],
+      		'max': [ parseInt($('#all_time').val()) ]
+      	}
+      });
+
+      document.getElementById('slider').noUiSlider.on('update', function( values, handle ) {
+        var hours = Math.floor( parseInt(values) / 60);
+        var minutes = parseInt(values) % 60;
+        $('#selected_time').html( hours + 'ч ' + minutes + 'м');
+      });
+
+      $('#postTimeToServer').on('click', function(){
+
+        var token = $('#token').val();
+        var time = parseInt(document.getElementById('slider').noUiSlider.get());
+        var issue_id = $('#issue_id').val();
+
+        if (time > 0) {
+          $.ajax({
+            type: 'POST',
+            url: 'time/postTimeToSystem',
+            data: {
+              _token: token,
+              time: time,
+              issueId: issue_id
+            },
+            success: function (msg) {
+              location.reload();
+            }
+          });
+        }
+
+      });
+    }
+
     var timer = false;
     var timerId;
     var currentTimeInMinutes = 0;

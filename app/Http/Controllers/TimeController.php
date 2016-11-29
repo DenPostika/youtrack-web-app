@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use YouTrack\Connection;
 use App\Http\Models\TimeModel;
 use Carbon\Carbon;
+
 use DB;
 
 
@@ -54,6 +55,27 @@ class TimeController extends Controller
 
       DB::table('users')->where('id', $user->id)->update(array(
         'all_time'               => (int)$user->all_time + (int)$time,
+      ));
+
+    }
+
+    public function postTimeToSystem(Request $request)
+    {
+      $user = Auth::user();
+
+      $time = $request->input('time');
+      $issueId = $request->input('issueId');
+      $today = Carbon::now()->timestamp;
+
+      $youtrack =  new Connection(
+          $user->youtrack_url,
+          $user->youtrack_email,
+          $user->youtrack_password
+        );
+
+      $succes = $youtrack->addWorkitem($issueId, $today, $time);
+      DB::table('users')->where('id', $user->id)->update(array(
+        'all_time'               => (int)$user->all_time - (int)$time,
       ));
 
     }

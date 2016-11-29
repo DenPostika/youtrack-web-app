@@ -29,3 +29,4 @@ Route::get('/tracker', 'TrackerController@index');
 
 Route::post('/time/save', 'TimeController@save');
 Route::post('time/getTimeForDate', 'TimeController@getTimeForDate');
+Route::post('time/postTimeToSystem', 'TimeController@postTimeToSystem');

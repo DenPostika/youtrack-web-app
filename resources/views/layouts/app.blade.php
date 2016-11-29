@@ -39,6 +39,7 @@
   <script type="text/javascript" src="{{ asset('/public/js/material.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('/public/js/ripples.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('/public/js/main.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('/public/js/nouislider.min.js') }}"></script>
   <script type="text/javascript">
     $.material.init()
   </script>
