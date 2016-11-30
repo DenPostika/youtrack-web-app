@@ -270,4 +270,14 @@ a, a:focus, a:hover {
   padding-top: 8px;
 }
 
+.chart-title {
+  font-size: 1.3em;
+  margin: 24px;
+}
+
+.chart-style {
+  margin-top: 20px;
+  margin-bottom: 55px;
+}
+
 /*# sourceMappingURL=style.css.map */

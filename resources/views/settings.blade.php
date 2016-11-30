@@ -25,21 +25,21 @@
                         </div>
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group {{ (isset($error)) ? 'has-error' : '' }}">
                         <label for="name" class="control-label">Youtrack</label>
                         <div class="">
                           <input type="text" class="form-control" name="youtrack_url" value="{{ $user->youtrack_url }}">
                         </div>
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group {{ (isset($error)) ? 'has-error' : '' }}">
                         <label for="name" class="control-label">Youtrack login</label>
                         <div class="">
                           <input type="text" class="form-control" name="youtrack_email" value="{{ $user->youtrack_email }}">
                         </div>
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group {{ (isset($error)) ? 'has-error' : '' }}">
                         <label for="name" class="control-label">Youtrack password</label>
                         <div class="">
                           <input type="password" class="form-control" name="youtrack_password" value="{{ $user->youtrack_password }}">

@@ -39,6 +39,8 @@ class SettingsController extends Controller
     {
       	$user = Auth::user();
 
+      try {
+        
         $youtrack =  new Connection(
             $request->input('youtrack_url'),
             $request->input('youtrack_email'),
@@ -54,5 +56,8 @@ class SettingsController extends Controller
           ));
 
         return redirect('/settings');
+      } catch (\Exception $e) {
+        return view('/settings' , array( 'user' => $user, 'error' => '404', 'activeMenu' => 'settings') );
+      }
     }
 }

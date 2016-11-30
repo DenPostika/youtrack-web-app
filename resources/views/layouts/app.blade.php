@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="public/css/app.css" rel="stylesheet">
+    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('/public/css/bootstrap-material-design.min.css') }}">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
@@ -40,8 +40,16 @@
   <script type="text/javascript" src="{{ asset('/public/js/ripples.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('/public/js/main.js') }}"></script>
   <script type="text/javascript" src="{{ asset('/public/js/nouislider.min.js') }}"></script>
+
   <script type="text/javascript">
     $.material.init()
   </script>
+
+  <script type="text/javascript" src="{{ asset('/public/js/chart/Chart.bundle.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('/public/js/chart/timeExt.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('/public/js/chart/chartExt.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('/public/js/chart/chartSample.js') }}"></script>
+
+
 </body>
 </html>

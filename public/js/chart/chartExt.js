@@ -201,7 +201,7 @@ function _nuChartHelper(){
 
       function getDayToChart (unix){
 
-        var days = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+        var days = ['ВСКР','ПН','ВТ','СР','ЧТ','ПТ','СБ'];
         var date = new Date(unix * 1000);
 
         return days[ date.getDay() ] + ' ' + date.getDate() + '.' + date.getMonth() + '.' + (date.getYear() - 100);
@@ -223,75 +223,14 @@ function _nuChartHelper(){
             var ctx = this.chart.chart.ctx;
             var originalStroke = ctx.stroke;
 
-            var points = this.chart.data.datasets[0]._meta[0].data;
-            var scale = this;
-
-            var distance = (points[1]._model.x - points[0]._model.x) / 2;
-            var nexPointX = points[0]._model.x;
-
-            blocksObject = [];
-
-            blocksObject.push({
-              firstPointX: nexPointX + 1 ,
-              firstPointY: 7,
-              secondPointX: points[0]._model.x + (distance / 2) + 1,
-              secondPointY: points[0]._xScale.bottom - 28
-            });
-
-            nexPointX += distance / 2;
-
-            for (var i = 1; i < points.length * 2; i++){
-              blocksObject.push({
-                firstPointX: nexPointX + 1,
-                firstPointY: 7,
-                secondPointX: nexPointX + distance + 1,
-                secondPointY: points[0]._xScale.bottom - 28,
-              });
-              nexPointX += distance;
-            }
-
-
-            for (var block in blocksObject){
-
-              ctx.beginPath();
-
-              if (blocksObject[block].firstPointX < pointCursor.x &&
-                blocksObject[block].firstPointY < pointCursor.y &&
-                blocksObject[block].secondPointX > pointCursor.x &&
-                blocksObject[block].secondPointY > pointCursor.y){
-                  var hover = true
-                  ctx.fillStyle = "rgba(225,237,246,0.6)";
-                } else {
-                  ctx.fillStyle = "rgba(220,220,220,0)";
-                  hover = false;
-                }
-
-                ctx.lineWidth = 1.2;
-
-                ctx.moveTo(blocksObject[block].firstPointX , blocksObject[block].firstPointY);
-                ctx.lineTo(blocksObject[block].secondPointX, blocksObject[block].firstPointY);
-                ctx.lineTo(blocksObject[block].secondPointX, blocksObject[block].secondPointY);
-                ctx.lineTo(blocksObject[block].firstPointX, blocksObject[block].secondPointY);
-                ctx.lineTo(blocksObject[block].firstPointX , blocksObject[block].firstPointY);
-
-                // ctx.moveTo(blocksObject[block].firstPointX + (distance / 2) , blocksObject[block].firstPointY);
-                // ctx.lineTo(blocksObject[block].firstPointX + (distance / 2) , blocksObject[block].secondPointY);
-
-                ctx.fill();
-                ctx.stroke();
-                ctx.closePath();
-
-                blocksObject[block].hover = hover;
-
-              }
               // Shadow
 
               ctx.stroke = function () {
                 ctx.save();
                 ctx.shadowColor = '#BDBDBD';
-                ctx.shadowBlur = 30;
+                ctx.shadowBlur = 20;
                 ctx.shadowOffsetX = 2;
-                ctx.shadowOffsetY = 25;
+                ctx.shadowOffsetY = 10;
                 originalStroke.apply(this, arguments)
                 ctx.restore();
               }
@@ -301,6 +240,7 @@ function _nuChartHelper(){
           });
 
           var ctx = jQuery('#'+myPlace);
+          ctx.width = 400;
 
           var chartData = {
             labels: [],
@@ -309,15 +249,15 @@ function _nuChartHelper(){
                 label: 'Dataset 1',
                 data: [],
                 fill: false,
-                borderColor: "#2096EF",
-                borderWidth: 6,
-                backgroundColor: "#2096EF",
+                borderColor: "#3097D1",
+                borderWidth: 4,
+                backgroundColor: "#3097D1",
                 pointBorderWidth: 0.1,
-                pointHoverRadius: 9,
-                pointHoverBorderWidth: 4,
+                pointHoverRadius: 6,
+                pointHoverBorderWidth: 2,
                 pointHoverBackgroundColor: "#8ABA56",
                 pointHoverBorderColor: "#FEEDF4",
-                hitRadius: 40
+                hitRadius: 40,
               }]
             };
 
@@ -331,7 +271,10 @@ function _nuChartHelper(){
               type: 'line',
               data: chartData,
               options: {
-
+                global: {
+                 responsive: false,
+                 maintainAspectRatio: false
+                },
                 hover: {
                   onHover: null,
                   mode: 'x-axis',
@@ -352,7 +295,9 @@ function _nuChartHelper(){
                     },
                     label: function(tooltipItem, data) {
                       var value = data.datasets[0].data[tooltipItem.index];
-                      return value;
+                      var hours = Math.floor( value / 60);
+                      var minutes = value % 60;
+                      return hours + 'ч ' + minutes + 'м';
                     }
                   }
                 },
@@ -389,28 +334,28 @@ function _nuChartHelper(){
               },
             });
 
-            var helpers = Chart.helpers;
-            helpers.bindEvents(CHART, ["mousemove"], function(evt){
-
-              pointCursor.x = evt.offsetX;
-              pointCursor.y = evt.offsetY;
-
-              for (var i in blocksObject){
-                if((blocksObject[i].firstPointX < evt.offsetX &&
-                  blocksObject[i].firstPointY < evt.offsetY &&
-                  blocksObject[i].secondPointX > evt.offsetX &&
-                  blocksObject[i].secondPointY > evt.offsetY) &&
-                  !blocksObject[i].hover
-                ){
-                  CHART.render();
-                } else if (!(blocksObject[i].firstPointX < evt.offsetX &&
-                  blocksObject[i].firstPointY < evt.offsetY &&
-                  blocksObject[i].secondPointX > evt.offsetX &&
-                  blocksObject[i].secondPointY > evt.offsetY ) && blocksObject[i].hover){
-                  CHART.render();
-                  }
-                }
-              });
+            // var helpers = Chart.helpers;
+            // helpers.bindEvents(CHART, ["mousemove"], function(evt){
+            //
+            //   pointCursor.x = evt.offsetX;
+            //   pointCursor.y = evt.offsetY;
+            //
+            //   for (var i in blocksObject){
+            //     if((blocksObject[i].firstPointX < evt.offsetX &&
+            //       blocksObject[i].firstPointY < evt.offsetY &&
+            //       blocksObject[i].secondPointX > evt.offsetX &&
+            //       blocksObject[i].secondPointY > evt.offsetY) &&
+            //       !blocksObject[i].hover
+            //     ){
+            //       CHART.render();
+            //     } else if (!(blocksObject[i].firstPointX < evt.offsetX &&
+            //       blocksObject[i].firstPointY < evt.offsetY &&
+            //       blocksObject[i].secondPointX > evt.offsetX &&
+            //       blocksObject[i].secondPointY > evt.offsetY ) && blocksObject[i].hover){
+            //       CHART.render();
+            //       }
+            //     }
+            //   });
 
             };
 

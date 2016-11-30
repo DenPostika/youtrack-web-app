@@ -94,4 +94,50 @@ class TimeController extends Controller
         return json_encode($today_issues);
     }
 
+    public function getTimeForDates(Request $request)
+    {
+        $user = Auth::user();
+        $today = Carbon::now()->format('Y-m-d');
+
+        $where = array(
+          ['user_id', '=', $user->id]
+        );
+
+        $today_issues = $this->timeModel->getTimeWhere( $where );
+        return json_encode($today_issues);
+    }
+
+    public function getTimeForChart(Request $request){
+        $user = Auth::user();
+        $today = Carbon::now()->format('Y-m-d');
+
+        $where = array(
+          ['user_id', '=', $user->id]
+        );
+
+        $issues = $this->timeModel->getTimeWhere( $where );
+        $result = [];
+        $middles = [];
+
+        foreach($issues as $issue){
+          $unix = Carbon::parse($issue->date)->timestamp;
+          $result[$unix][] = $issue;
+        }
+
+        foreach($result as $key => $issuesForDate) {
+          $middle = 0;
+          $count = 0;
+          foreach ($issuesForDate as $issue) {
+            $middle += (int)$issue->time;
+            $count++;
+          }
+           if ($count){
+             $middles[$key] = $middle / $count;
+           } else $middles[$key] = 0;
+        }
+
+        return json_encode($middles);
+    }
+
+
 }

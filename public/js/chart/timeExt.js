@@ -89,6 +89,7 @@ function _nuTime(){
     }
     this.filterData = function(period, object){
 
+      if (Object.keys(object).length > 7) {
       var output = {};
 
       var KEYS_ARRAY = [];
@@ -107,5 +108,6 @@ function _nuTime(){
       }
 
       return output;
+    } else return object;
     }
 }

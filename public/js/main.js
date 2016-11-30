@@ -131,10 +131,16 @@
     function getTime(){
 
       var token = $('input[name=_token]').val();
+      var url = 'time/getTimeForDates';
+
+       if (window.location.href.indexOf('/tracker') != -1)
+       {
+          url = 'time/getTimeForDate';
+       }
 
       $.ajax({
         type: 'POST',
-        url: 'time/getTimeForDate',
+        url: url,
         data: {
           _token: token,
         },
